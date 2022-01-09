@@ -1,34 +1,33 @@
 package com.example.toyapp.viewModel
 
-import android.app.Application
-import android.widget.Toast
-import androidx.lifecycle.AndroidViewModel
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.toyapp.repository.Repository
 
 class LoginViewModel() : ViewModel() {
+    private val TAG:String = "[LoginViewModel]"
 
-    private val _userId = MutableLiveData<String>()
-    val userId: LiveData<String>
-        get() = _userId
+    val userId: MutableLiveData<String> by lazy{
+        MutableLiveData<String>()
+    }
 
-    private val _userPassword = MutableLiveData<String>()
-    val userPassword: LiveData<String>
-        get() = _userPassword
+    val userPassword: MutableLiveData<String> by lazy{
+        MutableLiveData<String>()
+    }
 
-    private val _loginState = MutableLiveData<Int>()
+    private var _loginState = MutableLiveData<Int>()
     val loginState: LiveData<Int>
         get() = _loginState
 
-    val _isRegister = MutableLiveData<Boolean>()
+    private val _isRegister = MutableLiveData<Boolean>()
     val isRegister : LiveData<Boolean>
         get() = _isRegister
 
     private val repository = Repository()
 
-    fun register(){0
+    fun register(){
         _isRegister.value = true
     }
 
@@ -37,8 +36,14 @@ class LoginViewModel() : ViewModel() {
     }
 
     fun login(){
-        // TODO : Room DB에 접근하여 유효성 검사(빈칸이 있는지, DB에 data가 없는지) & return true(로그인 성공)/false(로그인 실패)
         val isEmpty = isEmpty()
+        if(!isEmpty){
+            if(repository.checkPassword(userId.value!!, userPassword.value!!)){
+                _loginState.value = 5
+            }else{
+                _loginState.value = 4
+            }
+        }
     }
 
     fun isEmpty() : Boolean{
