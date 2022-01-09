@@ -25,6 +25,7 @@
             android:ems="10"
             android:inputType="textEmailAddress"
             android:hint="Email"
+            android:text="@={registerViewModel.userId}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -38,10 +39,11 @@
             android:layout_marginRight="60dp"
             android:ems="10"
             android:hint="Password"
+            android:text="@={registerViewModel.userPassword}"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_valid" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_email_valid" />
 
         <Button
             android:id="@+id/btn_register"
@@ -51,18 +53,28 @@
             android:layout_marginRight = "60dp"
             android:layout_marginTop="20dp"
             android:text="Register"
+            android:onClick="@{() -> registerViewModel.register()}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_regi_pass" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_password_valid" />
 
         <TextView
-            android:id="@+id/tv_valid"
+            android:id="@+id/tv_email_valid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="65dp"
-            android:text=""
+            android:textColor="@color/design_default_color_error"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/et_regi_email" />
+
+        <TextView
+            android:id="@+id/tv_password_valid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:textColor="@color/design_default_color_error"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_regi_pass" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
