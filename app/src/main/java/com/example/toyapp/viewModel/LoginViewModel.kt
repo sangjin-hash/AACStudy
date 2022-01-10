@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModel
 import com.example.toyapp.repository.Repository
 
 class LoginViewModel() : ViewModel() {
-    private val TAG:String = "[LoginViewModel]"
+    companion object{
+        private const val TAG = "[LoginViewModel]"
+    }
 
     val userId: MutableLiveData<String> by lazy{
         MutableLiveData<String>()

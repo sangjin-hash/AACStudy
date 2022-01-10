@@ -13,6 +13,10 @@ import com.example.toyapp.viewModel.RegisterViewModel
 import com.example.toyapp.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
+    companion object{
+        private const val TAG = "[Register]"
+    }
+
     private var _binding: FragmentRegisterBinding? = null
     private val binding
         get() = _binding!!

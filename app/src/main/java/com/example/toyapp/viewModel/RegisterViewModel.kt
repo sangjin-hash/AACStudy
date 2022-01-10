@@ -15,10 +15,6 @@ class RegisterViewModel: ViewModel() {
         MutableLiveData<String>()
     }
 
-    val success : MutableLiveData<Boolean> by lazy{
-        MutableLiveData<Boolean>()
-    }
-
     private var _registerState = MutableLiveData<Int>()
     val registerState: LiveData<Int>
         get() = _registerState
