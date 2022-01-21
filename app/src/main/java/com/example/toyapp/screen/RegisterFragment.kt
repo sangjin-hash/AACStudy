@@ -6,12 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.toyapp.R
 import com.example.toyapp.viewModel.RegisterViewModel
 import com.example.toyapp.databinding.FragmentRegisterBinding
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
 
+@AndroidEntryPoint
+@WithFragmentBindings
 class RegisterFragment : Fragment() {
     companion object{
         private const val TAG = "[Register]"
@@ -21,7 +26,7 @@ class RegisterFragment : Fragment() {
     private val binding
         get() = _binding!!
 
-    private val viewModel = RegisterViewModel()
+    private val viewModel : RegisterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,19 +45,19 @@ class RegisterFragment : Fragment() {
         viewModel.registerState.observe(viewLifecycleOwner, Observer<Int>{  tag ->
             when(tag){
                 1 -> {
-                    binding.tvEmailValid.text = "아이디가 비어 있습니다"
-                    binding.tvPasswordValid.text = "비밀번호가 비어 있습니다"
+                    binding.tvEmailValid.text = getString(R.string.Id_empty)
+                    binding.tvPasswordValid.text = getString(R.string.Pass_empty)
                 }
                 2 -> {
-                    binding.tvEmailValid.text = "아이디가 비어 있습니다"
+                    binding.tvEmailValid.text = getString(R.string.Id_empty)
                     binding.tvPasswordValid.text = ""
                 }
                 3 -> {
                     binding.tvEmailValid.text = ""
-                    binding.tvPasswordValid.text = "비밀번호가 비어 있습니다"
+                    binding.tvPasswordValid.text = getString(R.string.Pass_empty)
                 }
                 4 -> {
-                    binding.tvEmailValid.text = "중복된 아이디입니다."
+                    binding.tvEmailValid.text = getString(R.string.Overlap)
                     binding.tvPasswordValid.text = ""
                 }
                 5 -> {

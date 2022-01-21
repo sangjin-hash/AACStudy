@@ -4,9 +4,14 @@ package com.example.toyapp.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.toyapp.repository.Repository
+import com.example.toyapp.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class LoginViewModel() : ViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(
+    private val userRepository: UserRepository
+) : ViewModel() {
     companion object{
         private const val TAG = "[LoginViewModel]"
     }
@@ -27,8 +32,6 @@ class LoginViewModel() : ViewModel() {
     val isRegister : LiveData<Boolean>
         get() = _isRegister
 
-    private val repository = Repository()
-
     fun register(){
         _isRegister.value = true
     }
@@ -40,7 +43,7 @@ class LoginViewModel() : ViewModel() {
     fun login(){
         val isEmpty = isEmpty()
         if(!isEmpty){
-            if(repository.checkPassword(userId.value!!, userPassword.value!!)){
+            if(userRepository.checkPassword(userId.value!!, userPassword.value!!)){
                 _loginState.value = 5
             }else{
                 _loginState.value = 4

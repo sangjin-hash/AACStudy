@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">ToyApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="Id_Pass_empty">아이디와 비밀번호가 비어있습니다</string>
+    <string name="Id_empty">아이디가 비어있습니다</string>
+    <string name="Pass_empty">비밀번호가 비어있습니다</string>
+    <string name="Pass_Error">존재하지 않는 아이디거나 비밀번호가 옳지 않습니다.</string>
+    <string name="Overlap">중복된 아이디입니다.</string>
+    <string name="Success">로그인 성공</string>
 </resources>

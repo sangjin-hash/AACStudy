@@ -1,10 +1,10 @@
-package com.example.toyapp.repository
+package com.example.toyapp.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-// Model class
+
 @Entity(tableName = "user")
 data class User (
     @PrimaryKey(autoGenerate = true)
