@@ -1,18 +1,17 @@
-package com.example.toyapp.repository.dao
+package com.example.toyapp.repository
 
-import androidx.lifecycle.LiveData
+
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.toyapp.repository.User
+import com.example.toyapp.model.User
 
 
-//Data Access Object -> 데이터에 접근할 수 있는 method를 정의해놓은 interface
 @Dao
 interface UserDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)            // 중복된 내용이 있을 때 덮어쓰기
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(user: User)
 
     @Query("SELECT userId FROM user")
