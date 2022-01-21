@@ -3,10 +3,15 @@ package com.example.toyapp.viewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.toyapp.repository.Repository
-import com.example.toyapp.repository.User
+import com.example.toyapp.model.User
+import com.example.toyapp.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class RegisterViewModel: ViewModel() {
+@HiltViewModel
+class RegisterViewModel @Inject constructor(
+    private val userRepository: UserRepository
+): ViewModel() {
     val userId: MutableLiveData<String> by lazy{
         MutableLiveData<String>()
     }
@@ -19,21 +24,21 @@ class RegisterViewModel: ViewModel() {
     val registerState: LiveData<Int>
         get() = _registerState
 
-    private val repository = Repository()
-
     fun register(){
         val isEmpty = isEmpty()
         if (!isEmpty){
-            if(repository.checkId(userId.value!!)){
+            if(userRepository.checkId(userId.value!!)){
                 //Id가 중복될 경우
                 _registerState.value = 4
             }else
             {
                 _registerState.value = 5
-                repository.insertUser(User(
+                userRepository.insertUser(
+                    User(
                     userId = userId.value!!,
                     userPassword = userPassword.value!!
-                ))
+                    )
+                )
             }
         }
     }
