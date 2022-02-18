@@ -13,10 +13,9 @@ import com.example.toyapp.R
 import com.example.toyapp.viewModel.RegisterViewModel
 import com.example.toyapp.databinding.FragmentRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.WithFragmentBindings
+
 
 @AndroidEntryPoint
-@WithFragmentBindings
 class RegisterFragment : Fragment() {
     companion object{
         private const val TAG = "[Register]"

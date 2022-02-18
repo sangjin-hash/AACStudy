@@ -1,8 +1,8 @@
 package com.example.toyapp.screen
 
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,10 +15,10 @@ import com.example.toyapp.R
 import com.example.toyapp.viewModel.LoginViewModel
 import com.example.toyapp.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.WithFragmentBindings
+
+
 
 @AndroidEntryPoint
-@WithFragmentBindings
 class LoginFragment : Fragment() {
     companion object{
         private const val TAG = "[Login]"
