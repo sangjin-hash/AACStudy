@@ -22,7 +22,7 @@ class NetworkRepository @Inject constructor(private val apiServiceImpl: ApiServi
         emit(apiServiceImpl.updateData(data))
     }.flowOn(Dispatchers.IO)
 
-    fun insertData(name:String, hobby:String, phone: String) : Flow<List<Message>> = flow{
+    fun insertData(name:String, hobby:String, phone: String) : Flow<Message> = flow{
         emit(apiServiceImpl.insertData(name, hobby, phone))
     }.flowOn(Dispatchers.IO)
 }
