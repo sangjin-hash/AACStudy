@@ -4,9 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/activity_main.xml" value="0.36277173913043476" />
+        <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/activity_navi.xml" value="0.33" />
+        <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/fragment_delete.xml" value="0.33" />
+        <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/fragment_insert.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/fragment_login.xml" value="0.36277173913043476" />
         <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/fragment_register.xml" value="0.36277173913043476" />
         <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/fragment_service.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/layout/fragment_update.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/hmsl/AndroidStudy/app/src/main/res/menu/bottom_menu.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/sangj/AndroidStudy/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/sangj/AndroidStudy/app/src/main/res/layout/fragment_login.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/sangj/AndroidStudy/app/src/main/res/layout/fragment_register.xml" value="0.25364583333333335" />

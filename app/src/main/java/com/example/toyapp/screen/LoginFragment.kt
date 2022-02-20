@@ -1,19 +1,19 @@
 package com.example.toyapp.screen
 
 
-import androidx.fragment.app.Fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.toyapp.R
-import com.example.toyapp.viewModel.LoginViewModel
 import com.example.toyapp.databinding.FragmentLoginBinding
+import com.example.toyapp.viewModel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -66,7 +66,7 @@ class LoginFragment : Fragment() {
                 5 -> {
                     Toast.makeText(activity, R.string.Success, Toast.LENGTH_SHORT).show()
 
-                    val action = LoginFragmentDirections.actionLoginDestinationToServiceDestination()
+                    val action = LoginFragmentDirections.actionLoginDestinationToNaviActivity()
                     findNavController().navigate(action)
                 }
             }

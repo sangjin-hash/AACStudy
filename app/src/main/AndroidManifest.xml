@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToyApp">
         <activity
+            android:name=".screen.crud.NaviActivity"
+            android:exported="false" />
+        <activity
+            android:name=".screen.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
