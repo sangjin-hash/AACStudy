@@ -47,7 +47,7 @@ class DeleteFragment : Fragment() {
                         binding.tvResult.text = it.msg.toString()
                         Log.e("DELETE", "ERROR")
                     }
-                    is ApiState.Success_delete -> {
+                    is ApiState.Success_String -> {
                         binding.tvResult.text = "Success"
                         Log.d("DELETE", "SUCCESS")
                     }

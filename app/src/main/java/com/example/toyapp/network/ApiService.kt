@@ -14,8 +14,17 @@ interface ApiService {
     suspend fun deleteData(@Query("id")id : Int):String
 
     @GET("update.php")
-    suspend fun updateData(@Query("data")data: Data):List<String>
+    suspend fun updateData(
+        @Query("id")id : Int,
+        @Query("name")name : String,
+        @Query("hobby")hobby : String,
+        @Query("phone")phone : String
+    ) : String
 
     @POST("insert.php")
-    suspend fun insertData(@Query("name")name: String, @Query("hobby")hobby : String, @Query("phone")phone : String):Message
+    suspend fun insertData(
+        @Query("name")name: String,
+        @Query("hobby")hobby : String,
+        @Query("phone")phone : String
+    ) : Message
 }

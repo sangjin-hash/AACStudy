@@ -12,8 +12,8 @@ sealed class ApiState {
     // Insert 했을 때 성공
     class Success_insert(val body: Message) : ApiState()
 
-    // Delete 했을 때 성공
-    class Success_delete(val body: String) : ApiState()
+    // Delete & Update 했을 때 성공
+    class Success_String(val body: String) : ApiState()
 
     object Empty : ApiState()
 }

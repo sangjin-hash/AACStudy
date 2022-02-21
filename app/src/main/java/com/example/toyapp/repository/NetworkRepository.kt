@@ -18,8 +18,8 @@ class NetworkRepository @Inject constructor(private val apiServiceImpl: ApiServi
         emit(apiServiceImpl.deleteData(id))
     }.flowOn(Dispatchers.IO)
 
-    fun updateData(data: Data) : Flow<List<String>> = flow {
-        emit(apiServiceImpl.updateData(data))
+    fun updateData(id: Int, name: String, hobby: String, phone: String) : Flow<String> = flow {
+        emit(apiServiceImpl.updateData(id, name, hobby, phone))
     }.flowOn(Dispatchers.IO)
 
     fun insertData(name:String, hobby:String, phone: String) : Flow<Message> = flow{

@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class DeleteViewModel @Inject constructor(private var networkRepository: NetworkRepository) : ViewModel() {
+class UpdateViewModel @Inject constructor(private var networkRepository: NetworkRepository) : ViewModel(){
     private val dataStateFlow: MutableStateFlow<ApiState>
         = MutableStateFlow(ApiState.Empty)
 
@@ -24,17 +24,34 @@ class DeleteViewModel @Inject constructor(private var networkRepository: Network
         MutableLiveData<String>()
     }
 
-    fun delete_person(){
-        var id : Int = Integer.parseInt(userId.value)
-        deleteData(id)
+    val userName : MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
     }
 
-    fun deleteData(id: Int) = viewModelScope.launch {
-        networkRepository.deleteData(id)
+    val userHobby : MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+
+    val userPhone : MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+
+    fun update_person(){
+        var id : Int = Integer.parseInt(userId.value)
+        var name : String = userName.value.toString()
+        var hobby : String = userHobby.value.toString()
+        var phone : String = userPhone.value.toString()
+
+        updateData(id,name,hobby,phone)
+    }
+
+    private fun updateData(id: Int, name: String, hobby: String, phone: String) = viewModelScope.launch {
+        networkRepository.updateData(id, name, hobby, phone)
             .catch { e ->
                 dataStateFlow.value = ApiState.Failure(e)
-            }.collect { data ->
+            }.collect{ data ->
                 dataStateFlow.value = ApiState.Success_String(data)
             }
+
     }
 }
