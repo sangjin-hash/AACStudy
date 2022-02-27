@@ -8,6 +8,9 @@ plugins {
 
     //navigation FragmentDirections class 생성
     id 'androidx.navigation.safeargs.kotlin'
+
+    // extension plugin
+    id 'kotlin-android-extensions'
 }
 
 android {

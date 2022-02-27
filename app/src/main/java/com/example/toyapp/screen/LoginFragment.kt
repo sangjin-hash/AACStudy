@@ -66,7 +66,7 @@ class LoginFragment : Fragment() {
                 5 -> {
                     Toast.makeText(activity, R.string.Success, Toast.LENGTH_SHORT).show()
 
-                    val action = LoginFragmentDirections.actionLoginDestinationToNaviActivity()
+                    val action = LoginFragmentDirections.actionLoginDestinationToServiceActivity()
                     findNavController().navigate(action)
                 }
             }

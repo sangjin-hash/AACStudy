@@ -15,7 +15,28 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/tasks"
+            android:id="@+id/textViewUserId"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:text="Hello world"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/textViewUserName"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:text="Hello world"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/textViewUserHobby"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            tools:text="Hello world"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:id="@+id/textViewUserPhone"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             tools:text="Hello world"
             android:padding="10dp"
