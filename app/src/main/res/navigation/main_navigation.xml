@@ -19,8 +19,8 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"/>
         <action
-            android:id="@+id/action_login_destination_to_naviActivity"
-            app:destination="@id/naviActivity"
+            android:id="@+id/action_login_destination_to_serviceActivity"
+            app:destination="@id/serviceActivity"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:launchSingleTop="true"
@@ -42,9 +42,8 @@
             app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <activity
-        android:id="@+id/naviActivity"
-        android:name="com.example.toyapp.screen.crud.NaviActivity"
-        android:label="activity_navi"
-        tools:layout="@layout/activity_navi">
-    </activity>
+        android:id="@+id/serviceActivity"
+        android:name="com.example.toyapp.screen.ServiceActivity"
+        android:label="activity_service"
+        tools:layout="@layout/activity_service" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.toyapp.repository
+package com.example.toyapp.db.user
 
 
 import androidx.room.Dao

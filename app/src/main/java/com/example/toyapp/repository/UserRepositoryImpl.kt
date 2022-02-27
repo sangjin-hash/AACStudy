@@ -1,5 +1,6 @@
 package com.example.toyapp.repository
 
+import com.example.toyapp.db.user.UserDao
 import com.example.toyapp.model.User
 
 class UserRepositoryImpl(private val userDao: UserDao) : UserRepository {
